@@ -1,4 +1,4 @@
-<script lang="ts" context="module">
+<script context="module">
 	import { onMount } from 'svelte';
 	import Auth from './Auth.svelte';
 	import Articles from './Articles.svelte';

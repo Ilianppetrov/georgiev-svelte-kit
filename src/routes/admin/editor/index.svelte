@@ -1,9 +1,7 @@
-<script lang="ts">
+<script>
 	import { onMount } from 'svelte';
-	import type { EditorConfig } from '@editorjs/editorjs';
 	import { page } from '$app/stores';
 	import { supabase } from '$src/supabaseClient';
-	import type { Articles } from '$src/models.td';
 	import { goto } from '$app/navigation';
 
 	// export let data: EditorConfig['data'] = [];
@@ -18,7 +16,7 @@
 
 		if (articlesId) {
 			let { data: article, error } = await supabase
-				.from<Articles>('Articles')
+				.from('Articles')
 				.select('*')
 				.eq('id', articlesId);
 
@@ -30,7 +28,7 @@
 		let { default: Header } = await import('@editorjs/header');
 		let { default: List } = await import('@editorjs/list');
 		let { default: Delimiter } = await import('@editorjs/delimiter');
-		const config: EditorConfig = {
+		const config = {
 			autofocus: true,
 			holder: 'editor',
 			tools: {

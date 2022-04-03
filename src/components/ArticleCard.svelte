@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import Button from './common/Button.svelte';
 	export let title;
 	export let description = '';

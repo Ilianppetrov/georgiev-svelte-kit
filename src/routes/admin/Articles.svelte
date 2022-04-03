@@ -1,11 +1,10 @@
 <script lang="ts">
-	import type { Article } from '$src/models.td';
 	import ArticleCard from '$src/components/ArticleCard.svelte';
 
 	import { supabase } from '../../supabaseClient';
 
 	async function getArticles() {
-		let { data, error } = await supabase.from<Article>('Articles').select('id, name');
+		let { data, error } = await supabase.from('Articles').select('id, name');
 
 		return { data, error };
 	}
